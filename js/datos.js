@@ -19,9 +19,9 @@ const LEVELS = [
   {id:'n1', name:'Primer nivel', short:'Nivel 1', color:'var(--n1)',
    note:'Entras desde la <b>Plaza Principal</b> (abajo) al lobby de la Gran Sala. Las salas están en las alas <b>izquierda</b> y <b>derecha</b> del lobby.'},
   {id:'n2', name:'Segundo nivel', short:'Nivel 2', color:'var(--n2)',
-   note:'Segundo nivel del lobby. <b>Salón Dorado</b> y <b>Tras Bastidores</b> están en el costado izquierdo; <b>Salón Terrazas</b>, a la derecha.'},
+   note:'Costado izquierdo, en orden: <b>Jaguar</b>, <b>Quetzal</b> (Tras Bastidores) y <b>Orquídea</b> (Salón Dorado), a la par de la Gran Sala.'},
   {id:'ext', name:'Exteriores', short:'Exteriores', color:'var(--ext)',
-   note:'Orientado como lo ves al llegar: la <b>Plaza Principal</b> abajo y la <b>Plaza Sur</b> (Gran Comedor) detrás de la Gran Sala.'},
+   note:'Entradas por la <b>21 calle</b> (abajo, Plaza Principal) y la <b>24 calle</b> (arriba, Plaza Sur). El Gran Comedor está detrás de la Gran Sala.'},
 ];
 
 const ROOMS = [
@@ -231,19 +231,19 @@ const ROOMS = [
     "level": "n2",
     "type": "sala2",
     "name": "Sala Jaguar",
-    "where": "Ala izquierda · segundo nivel del lobby",
-    "how": "Sube al segundo nivel del lobby y gira a la <b>izquierda</b> (de espaldas a la entrada).",
+    "where": "Costado izquierdo · 2.º nivel · primera sala",
+    "how": "Sube al segundo nivel del lobby y gira a la <b>izquierda</b> (de espaldas a la entrada). Jaguar es la <b>primera</b> sala del costado izquierdo.",
     "x": 110,
-    "y": 592,
+    "y": 724,
     "w": 220,
-    "h": 120,
+    "h": 108,
     "lines": [
       "Jaguar"
     ],
     "kicker": "SALA",
     "size": 26,
     "lx": 192,
-    "ly": 668,
+    "ly": 790,
     "decoKey": "sala",
     "facts": [
       "Charlas",
@@ -251,7 +251,7 @@ const ROOMS = [
     ],
     "tags": "",
     "bx": 134,
-    "by": 616,
+    "by": 748,
     "foto": "img/salas/jaguar.jpg"
   },
   {
@@ -260,23 +260,23 @@ const ROOMS = [
     "level": "n2",
     "type": "sala2",
     "name": "Sala Quetzal",
-    "where": "Salón Tras Bastidores · costado izquierdo, 2.º nivel",
-    "how": "Sube al segundo nivel del lobby y sigue por el <b>costado lateral izquierdo</b> hacia el fondo: ahí está el salón Tras Bastidores.",
-    "x": 95,
-    "y": 400,
-    "w": 175,
-    "h": 163,
+    "where": "Salón Tras Bastidores · costado izquierdo, 2.º nivel · segunda sala",
+    "how": "Sube al segundo nivel del lobby y sigue por el <b>costado izquierdo</b>: Quetzal (Tras Bastidores) es la <b>segunda</b> sala, después de Jaguar.",
+    "x": 110,
+    "y": 592,
+    "w": 220,
+    "h": 120,
     "lines": [
       "Quetzal",
       "Tras Bastidores"
     ],
     "subFrom": 1,
     "kicker": "SALA",
-    "size": 23,
-    "lx": 170,
-    "ly": 500,
-    "bx": 118,
-    "by": 424,
+    "size": 24,
+    "lx": 180,
+    "ly": 664,
+    "bx": 134,
+    "by": 614,
     "decoKey": "sala",
     "facts": [
       "Charlas",
@@ -291,28 +291,27 @@ const ROOMS = [
     "level": "n2",
     "type": "sala2",
     "name": "Sala Orquídea",
-    "where": "Salón Dorado · costado izquierdo, 2.º nivel",
-    "how": "Sube al segundo nivel del lobby y gira a la <b>izquierda</b>, hacia el frente del edificio: el Salón Dorado es el salón con vista a la ciudad.",
-    "x": 110,
-    "y": 724,
-    "w": 220,
-    "h": 108,
+    "where": "Salón Dorado · costado izquierdo, 2.º nivel · a la par de la Gran Sala",
+    "how": "Sube al segundo nivel del lobby y sigue por el <b>costado izquierdo</b> hasta el fondo: el Salón Dorado es la <b>última</b> sala, después de Jaguar y Quetzal, a la par de la Gran Sala.",
+    "x": 95,
+    "y": 400,
+    "w": 175,
+    "h": 163,
     "lines": [
       "Orquídea",
       "Salón Dorado"
     ],
     "subFrom": 1,
     "kicker": "SALA",
-    "size": 22,
-    "lx": 180,
-    "ly": 788,
-    "bx": 134,
-    "by": 748,
-    "decoKey": "dorado",
+    "size": 23,
+    "lx": 170,
+    "ly": 500,
+    "bx": 118,
+    "by": 424,
+    "decoKey": "sala",
     "facts": [
       "Charlas",
-      "≈ 100 personas",
-      "Vista a la ciudad"
+      "≈ 100 personas"
     ],
     "tags": "salon dorado",
     "foto": "img/salas/orquidea.jpg"
@@ -434,5 +433,57 @@ const ROOMS = [
     ],
     "tags": "comida almuerzo refaccion plaza sur",
     "foto": "img/salas/comedor.jpg"
+  },
+  {
+    "id": "entrada-21",
+    "n": 15,
+    "level": "ext",
+    "type": "ext",
+    "name": "Entrada por la 21 calle",
+    "where": "Acceso del lado de la Plaza Principal",
+    "how": "Al entrar por la 21 calle llegas directamente a la <b>Plaza Principal</b>. Sigue de frente hacia el lobby de la Gran Sala, donde está el registro.",
+    "x": 405,
+    "y": 1000,
+    "w": 190,
+    "h": 44,
+    "rx": 22,
+    "lines": [
+      "Entrada 21 calle"
+    ],
+    "size": 16,
+    "lx": 518,
+    "ly": 1023,
+    "bx": 428,
+    "by": 1022,
+    "facts": [
+      "Acceso al evento"
+    ],
+    "tags": "entrada ingreso acceso 21 calle puerta"
+  },
+  {
+    "id": "entrada-24",
+    "n": 16,
+    "level": "ext",
+    "type": "ext",
+    "name": "Entrada por la 24 calle",
+    "where": "Acceso del lado de la Plaza Sur y el Teatro de Cámara",
+    "how": "Al entrar por la 24 calle quedas del lado trasero de la Gran Sala, cerca del <b>Gran Comedor</b> (Plaza Sur) y del Teatro de Cámara. Para llegar al registro, rodea la Gran Sala hasta la <b>Plaza Principal</b> y entra al lobby.",
+    "x": 700,
+    "y": 8,
+    "w": 190,
+    "h": 44,
+    "rx": 22,
+    "lines": [
+      "Entrada 24 calle"
+    ],
+    "size": 16,
+    "lx": 813,
+    "ly": 31,
+    "bx": 723,
+    "by": 30,
+    "facts": [
+      "Acceso al evento"
+    ],
+    "tags": "entrada ingreso acceso 24 calle puerta"
   }
 ];

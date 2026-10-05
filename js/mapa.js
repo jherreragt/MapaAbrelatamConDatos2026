@@ -65,7 +65,7 @@ function plazaStrip(g, entrance){
   label(g, 500, 1048, ['PLAZA PRINCIPAL'], {size:16, weight:800, fill:'#6b7a63', ls:3});
   if (entrance){
     el('path', {d:'M500 1010 V 892', stroke:C.navy, 'stroke-width':5, 'stroke-linecap':'round', 'marker-end':'url(#arrow)'}, g);
-    chip(g, 590, 962, 'ENTRADA');
+    chip(g, 600, 962, 'ENTRADA · 21 CALLE');
   }
 }
 
@@ -112,11 +112,15 @@ function drawBuilding(g, lv){
 function drawExterior(g){
   staticRect(g, 0, 0, 1000, 1100, {rx:40, fill:'#e3efdf'});
   // caminos
+  // calles: 24 calle (arriba, lado de la Plaza Sur) y 21 calle (abajo, lado de la Plaza Principal)
   el('path', {d:'M-20 1052 Q 500 1010 1020 1066', fill:'none', stroke:'#ffffff', 'stroke-width':44, 'stroke-linecap':'round'}, g);
+  el('path', {d:'M-20 26 Q 500 46 1020 22', fill:'none', stroke:'#ffffff', 'stroke-width':40, 'stroke-linecap':'round'}, g);
+  label(g, 150, 1045, ['21 CALLE'], {size:15, weight:800, fill:'#8e93a8', ls:3});
+  label(g, 150, 34, ['24 CALLE'], {size:15, weight:800, fill:'#8e93a8', ls:3});
   el('path', {d:'M500 1030 V 905 M300 50 Q 250 60 250 200 V 640 M700 50 Q 760 60 770 200 V 620 Q 780 700 740 760', fill:'none', stroke:'#f3eee2', 'stroke-width':18, 'stroke-linecap':'round'}, g);
   // árboles
   let seed = 11; const rnd = () => (seed = (seed*9301 + 49297) % 233280) / 233280;
-  const avoid = [[280,190,440,470],[310,60,380,140],[110,660,600,240],[50,860,280,150],[20,630,100,220],[720,290,140,130],[0,1015,1000,85],[460,880,80,140]];
+  const avoid = [[0,0,1000,64],[400,985,210,70],[690,40,220,170],[280,190,440,470],[310,60,380,140],[110,660,600,240],[50,860,280,150],[20,630,100,220],[720,290,140,130],[0,1015,1000,85],[460,880,80,140]];
   const trees = el('g', {}, g);
   for (let i=0, n=0; i<1400 && n<110; i++){
     const x = 30 + rnd()*940, y = 30 + rnd()*990, r = 9 + rnd()*12;
@@ -153,11 +157,11 @@ function drawExterior(g){
   staticRect(mb, 30, 640, 76, 200, {rx:12, fill:'#efe6d5', stroke:'#b9a684', 'stroke-width':2});
   const tm = label(mb, 68, 740, ['Escuela Nacional de Marimba'], {size:12.5, weight:700, fill:'#7a6a4c'});
   tm.setAttribute('transform', 'rotate(-90 68 740)');
-  // ingreso
-  el('path', {d:'M500 1066 V 914', stroke:C.navy, 'stroke-width':5, 'stroke-linecap':'round', 'marker-end':'url(#arrow)'}, g);
-  chip(g, 585, 1006, 'INGRESO');
+  // accesos (las entradas se dibujan como espacios en datos.js)
+  el('path', {d:'M500 998 V 914', stroke:C.navy, 'stroke-width':5, 'stroke-linecap':'round', 'marker-end':'url(#arrow)'}, g);
+  el('path', {d:'M795 56 Q 790 120 772 196', fill:'none', stroke:C.navy, 'stroke-width':5, 'stroke-linecap':'round', 'marker-end':'url(#arrow)'}, g);
   // brújula: el norte queda hacia abajo (vista desde la entrada)
-  const cp = el('g', {transform:'translate(918 92)'}, g);
+  const cp = el('g', {transform:'translate(930 470)'}, g);
   el('circle', {r:34, fill:'#fff', stroke:'#d5d8e6', 'stroke-width':2}, cp);
   el('path', {d:'M0 24 L-10 -6 L0 0 L10 -6 Z', fill:'#e8443a'}, cp);
   el('path', {d:'M0 -24 L-10 -6 L0 0 L10 -6 Z', fill:'#c9cbd8'}, cp);

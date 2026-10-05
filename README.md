@@ -77,6 +77,8 @@ Para abrir una sala concreta, añade el identificador al final: `…/mapa-salas-
 | 2 | Sala Barrilete (Salón Terrazas) | `barrilete` |
 | Ext. | Plaza Principal | `plaza` |
 | Ext. | Gran Comedor | `comedor` |
+| Ext. | Entrada por la 21 calle | `entrada-21` |
+| Ext. | Entrada por la 24 calle | `entrada-24` |
 
 En la agenda del evento puedes enlazar cada charla a su sala, por ejemplo `https://tusitio.org/mapa#sala=jaguar`.
 
