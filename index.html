@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mapa interactivo de salas de Abrelatam / ConDatos 2026 en el Centro Cultural Miguel Ángel Asturias.">
+<title>Mapa de salas · Abrelatam ConDatos 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/mapa.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="#262262"/><circle cx="12" cy="10" r="2.6" fill="#f6b915"/></svg></div>
+      <h1>Abrelatam · ConDatos 2026<small>Mapa de salas · Centro Cultural Miguel Ángel Asturias</small></h1>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Nivel"></div>
+  </header>
+
+  <div class="mapwrap" id="map" aria-label="Mapa interactivo de salas">
+    <div class="stage" id="stage">
+      <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="1000" height="1100" viewBox="0 0 1000 1100" font-family="Archivo, system-ui, sans-serif">
+        <defs>
+          <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="10" height="10" fill="#eceef4"/><line x1="0" y1="0" x2="0" y2="10" stroke="#d9dce6" stroke-width="4"/>
+          </pattern>
+          <pattern id="paving" width="26" height="26" patternUnits="userSpaceOnUse">
+            <rect width="26" height="26" fill="#eef1ea"/><path d="M26 0H0V26" fill="none" stroke="#dfe4da" stroke-width="1.5"/>
+          </pattern>
+          <linearGradient id="gsala" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3a3592"/><stop offset="1" stop-color="#262262"/>
+          </linearGradient>
+          <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1d1a52" flood-opacity=".14"/>
+          </filter>
+          <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#262262"/>
+          </marker>
+        </defs>
+        <g id="lv-n1" class="lvl"></g>
+        <g id="lv-n2" class="lvl"></g>
+        <g id="lv-ext" class="lvl"></g>
+      </svg>
+    </div>
+    <div class="mapnote" id="note"></div>
+    <div class="zoom">
+      <button class="zbtn" id="zin" aria-label="Acercar">+</button>
+      <button class="zbtn" id="zout" aria-label="Alejar">−</button>
+      <button class="zbtn" id="zfit" aria-label="Ver todo el mapa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    </div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <aside>
+    <div class="detail empty" id="detail"></div>
+    <div class="listwrap">
+      <div class="searchbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="search" id="q" type="search" placeholder="Buscar sala o espacio…" aria-label="Buscar sala">
+      </div>
+      <div id="list"></div>
+    </div>
+  </aside>
+</div>
+<script src="js/datos.js"></script>
+<script src="js/mapa.js"></script>
+</body>
+</html>

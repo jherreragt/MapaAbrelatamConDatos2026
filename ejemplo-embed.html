@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejemplo de inserción · Mapa de salas</title>
+<style>
+  :root{--bg:#ffffff;--ink:#1b1a33;--muted:#5f5e7a;--line:#e3e2ee;--navy:#262262}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+  main{max-width:1200px;margin:0 auto;padding:32px 16px}
+  h1{color:var(--navy);margin:0 0 8px}
+  p{color:var(--muted);line-height:1.5}
+  pre{background:#f3f4fa;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto;font-size:13px}
+  .links a{display:inline-block;margin:0 8px 8px 0;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--navy);text-decoration:none;font-weight:600;font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <h1>¿Cómo llegar a tu sala?</h1>
+  <p>Así se ve el mapa dentro de una página web. Prueba los enlaces directos:</p>
+  <p class="links">
+    <a href="#sala=gran-sala">Gran Sala</a>
+    <a href="#sala=tikal">Sala Tikal</a>
+    <a href="#sala=orquidea">Sala Orquídea</a>
+    <a href="#sala=comedor">Gran Comedor</a>
+  </p>
+
+  <!-- ▼ Esto es todo lo que necesitas pegar en tu sitio ▼ -->
+  <div class="mapa-salas" data-height="760"></div>
+  <script src="embed.js" async></script>
+  <!-- ▲ ------------------------------------------------ ▲ -->
+
+  <h2>Código</h2>
+<pre>&lt;div class="mapa-salas" data-height="760"&gt;&lt;/div&gt;
+&lt;script src="https://USUARIO.github.io/REPOSITORIO/embed.js" async&gt;&lt;/script&gt;</pre>
+</main>
+</body>
+</html>
